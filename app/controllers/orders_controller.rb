@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
   private
 
   def set_painting
-    @painting = Painting.new(params[:id])
+    @painting = Painting.find(params[:id])
   end
 
   def params_orders

@@ -8,12 +8,13 @@ class PaintingsController < ApplicationController
 
   def show
   end
-  
+
   def new
     @painting = Painting.new
   end
   def create
     @painting = Painting.new(params_painting)
+    @painting.user = current_user
     if @painting.save!
       redirect_to painting_path(@painting)
     else
@@ -36,7 +37,7 @@ class PaintingsController < ApplicationController
   private
 
   def params_painting
-    params.require(:painting).permit(:title, :price, :measures, :user_id, :photo)
+    params.require(:painting).permit(:title, :price, :measures, :photo)
   end
 
   def find_painting
