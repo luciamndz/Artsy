@@ -1,6 +1,7 @@
 class PaintingsController < ApplicationController
 
   before_action :find_painting, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show]
   def index #homepage
     @paintings = Painting.all
   end
@@ -38,7 +39,10 @@ class PaintingsController < ApplicationController
   end
 
   def find_painting
-    @painting = @painting = Painting.find(params[:id])
+    @painting = Painting.find(params[:id])
   end
 
+  def set_user
+    @user = User.find(@painting.user_id)
+  end
 end
