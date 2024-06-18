@@ -1,0 +1,10 @@
+<div class="container mt-4" >
+  <h1><%= @painting.title %></h1>
+
+  <p><%= @painting.measures %></p>
+  <p><%= @painting.price %></p>
+  <p><%= "Painting owner: #{@painting.user_id}" %></p>
+
+  <%= link_to "Buy Painting", new_painting_order_path(@painting)%>
+  <%= link_to "Go back to home page", root_path%>
+</div>
