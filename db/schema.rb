@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_18_181548) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_18_193601) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,14 +43,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_181548) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "user_buyer_id", null: false
     t.bigint "user_id", null: false
     t.bigint "painting_id", null: false
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["painting_id"], name: "index_orders_on_painting_id"
-    t.index ["user_buyer_id"], name: "index_orders_on_user_buyer_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -81,6 +79,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_18_181548) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "orders", "paintings"
   add_foreign_key "orders", "users"
-  add_foreign_key "orders", "users", column: "user_buyer_id"
   add_foreign_key "paintings", "users"
 end

@@ -8,6 +8,7 @@ class PaintingsController < ApplicationController
 
   def show
   end
+  
   def new
     @painting = Painting.new
   end
@@ -43,6 +44,6 @@ class PaintingsController < ApplicationController
   end
 
   def set_user
-    @user = User.find(@painting.user_id)
+    @author = User.find(@painting.user_id)
   end
 end
