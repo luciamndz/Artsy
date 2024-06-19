@@ -21,17 +21,17 @@
   </head>
 
   <body>
-      <div class="container">
-        <%= render "shared/navbar" %>
-        <%= render "shared/flashes" %>
-        <%= yield %>
-        <%= render "shared/footer" %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      </div>
 
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
+    <%= yield %>
+    <%= render "shared/footer" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
