@@ -31,7 +31,7 @@ class PaintingsController < ApplicationController
 
   def destroy
     @painting.destroy!
-    redirect_to paintings_path
+    redirect_to root_path
   end
 
   private

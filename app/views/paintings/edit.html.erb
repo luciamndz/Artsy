@@ -1,10 +1,10 @@
 <div class="container w-50 m-4">
-<h1>Add a new painting</h1>
+<h1>Edit current painting</h1>
 <%= simple_form_for (@painting) do |f| %>
   <%= f.input :title %>
   <%= f.input :measures %>
   <%= f.input :price %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit "Add painting", class:"btn btn-primary"%>
+  <%= f.submit "Add painting"%>
 <% end %>
 </div>
