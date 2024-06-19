@@ -1,4 +1,7 @@
 <%= render "banner" %>
+<div class="button-add sticky-top m-5 d-flex justify-content-right">
+  <%= link_to "Sell your art", new_painting_path, class:"btn btn-primary" %>
+  </div>
 <div class="carousel-container">
   <div style="width:40%;">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
@@ -34,8 +37,6 @@
       </div>
     <% end %>
   </div>
-  <div class="button-add">
-  <%= link_to "Sell your art", new_painting_path, class:"btn btn-primary" %>
-  </div>
+
 
 </div>
