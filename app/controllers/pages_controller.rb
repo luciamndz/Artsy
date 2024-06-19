@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def my_orders
+    @orders = current_user.orders
+  end
 end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :paintings, :except => [:index]  do
     resources :orders, only: %i[new create]
   end
-  resources :orders, only: :destroy
+  get "my_orders", to: "pages#my_orders", as: :my_orders
   # Defines the root path route ("/")
   #root "paintings#index"
 end

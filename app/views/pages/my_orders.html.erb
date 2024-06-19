@@ -1,3 +1,9 @@
+<p>My Orders</p>
+<% current_user.orders.each do |order| %>
+  <%= order.painting.title %>
+  <%= order.painting.price %>
+<% end %>
+
 <h1>Order history</h1>
 <div class="container">
   <div class="card-product">

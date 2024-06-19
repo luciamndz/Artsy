@@ -1,20 +1,21 @@
 class OrdersController < ApplicationController
 
-  before_action :set_painting
+  before_action :set_painting, only: [:new, :create]
 
-  def index
+  def index #muestra historial de órdenes
     @orders = Order.all
   end
 
-  def new
-    @order = Order.new
+  def new #formato vacío para crear orden
   end
 
-  def create
-    @order = Order.new(params_orders)
-    @order.painting = @painting
+  def create #orden creada
+    @order = Order.new
+    @order.painting = @art
+    @order.user = current_user
+    @order.price = @art.price
     if @order.save!
-      redirect_to orders_path(@order)
+      redirect_to my_orders_path
     else
       render new:, status: :unprocessable_entity
     end
@@ -23,10 +24,10 @@ class OrdersController < ApplicationController
   private
 
   def set_painting
-    @painting = Painting.find(params[:id])
+    @art = Painting.find(params[:painting_id])
   end
 
-  def params_orders
-    params.require(:order).permit(:painting_id, :user_id, :user_buyer_id)
-  end
+  # def params_orders
+  #   params.require(:order).permit(:price)
+  # end
 end
