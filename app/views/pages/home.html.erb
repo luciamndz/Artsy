@@ -1,6 +1,6 @@
 <%= render "banner" %>
 <div class="carousel-container">
-  <div style="width:20%;">
+  <div style="width:40%;">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -23,6 +23,7 @@
       <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
         <div class="card" style="width: 15rem;">
           <%= cl_image_tag painting.photo.key %>
+          <p class="ml-3 "><%= link_to("more info", painting_path(painting))%></p>
           <div class="card-body">
             <h1 class="card-title"><%= painting.title %></h1>
             <p class="card-text">Medidas: <%= painting.measures %></p>
@@ -33,5 +34,8 @@
       </div>
     <% end %>
   </div>
-    <a class="btn btn-primary justify-content: flex-end" href="#" role="button">Sell your own art!</a>
+  <div class="button-add">
+  <%= link_to "Sell your art", new_painting_path, class:"btn btn-primary" %>
+  </div>
+
 </div>
