@@ -26,7 +26,7 @@ class PaintingsController < ApplicationController
   end
   def update
     @painting.update!(params_painting)
-    redirect_to painting_path
+    redirect_to painting_path(@painting)
   end
 
   def destroy
