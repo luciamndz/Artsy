@@ -1,6 +1,6 @@
-<div class="container mt-4 shadow-1">
+<div class="container mt-4 ">
 
-<div class="card" style="width: 30rem;">
+<div class="card shadow" style="width: 30rem;">
 
   <%= cl_image_tag @painting.photo.key, height:"300px"%>
   <div class="card-body">
@@ -12,10 +12,14 @@
     <li class="list-group-item">Price: <%= @painting.price %></li>
     <li class="list-group-item">Artist/Seller: <%=@author.user_name%></li>
   </ul>
-  <div class="card-body">
+  <div class="card-body d-flex justify-content-between">
     <%= link_to "Buy Painting", new_painting_order_path(@painting), class:"btn btn-primary"%>
+    <%= link_to "Edit Painting", edit_painting_path(@painting), class:"btn btn-primary"%>
 
   </div>
 </div>
-  <%= link_to "Go back to home page", root_path, class:"btn btn-primary mt-3 mb-3"%>
+<div class="container mt-3 mb-3">
+  <%= link_to "Go back to home page", root_path, class:"btn btn-outline-secondary"%>
+  <%= link_to "Delete Painting", root_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to take down your painting?"}, class: "btn btn-outline-danger"%>
+</div>
 </div>
