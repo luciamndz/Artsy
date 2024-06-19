@@ -1,6 +1,7 @@
 puts "Cleaning database!"
 User.destroy_all
 Painting.destroy_all
+Order.destroy_all
 
 puts "Creating users.."
 
@@ -60,3 +61,11 @@ paintings.each do |pintura|
   painting.photo.attach(io: file, filename: pintura[:title], content_type: "image/png")
   painting.save
 end
+
+puts "Creating orders..."
+
+Order.create!(
+  user_id: 1,
+  painting_id: 1,
+  price: 
+)

@@ -4,4 +4,8 @@ class PagesController < ApplicationController
   def home
     @paintings = Painting.all
   end
+
+  def my_orders
+    @orders = current_user.orders
+  end
 end
