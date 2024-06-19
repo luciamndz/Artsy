@@ -1,16 +1,14 @@
-<p>My Orders</p>
-<% current_user.orders.each do |order| %>
-  <%= order.painting.title %>
-  <%= order.painting.price %>
-<% end %>
-
-<h1>Order history</h1>
-<div class="container">
-  <div class="card-product">
-  <img src="https://media.timeout.com/images/101616011/750/422/image.jpg" />
-  <div class="card-product-infos">
-    <h2>Painting Title</h2>
-    <p>Painting price: <strong>$</strong>Date</p>
-  </div>
-</div>
+<h1>My Orders History</h1>
+<div class="justify-content-start">
+  <% current_user.orders.each do |order| %>
+    <div class="container w-75 m-5">
+      <div class="card-product">
+      <%= cl_image_tag order.painting.photo.key, height: "200px" %>
+      <div class="card-product-infos">
+        <h2><%= order.painting.title %></h2>
+        <p><%= order.painting.price %></p>
+      </div>
+    </div>
+    </div>
+  <% end %>
 </div>
