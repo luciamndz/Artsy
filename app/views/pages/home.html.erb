@@ -1,4 +1,7 @@
 <%= render "banner" %>
+<div class="button-add sticky-top m-5 d-flex justify-content-right">
+  <%= link_to "Sell your art", new_painting_path, class:"btn btn-primary" %>
+  </div>
 <div class="carousel-container">
   <div style="width:40%;">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
@@ -21,7 +24,7 @@
   <div class="row justify-content-center">
     <% @paintings.each do |painting| %>
       <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card" style="width: 15rem;">
+        <div class="card shadow-lg border border-light" style="width: 15rem;">
           <%= cl_image_tag painting.photo.key %>
           <p class="ml-3 "><%= link_to("more info", painting_path(painting))%></p>
           <div class="card-body">
@@ -34,8 +37,6 @@
       </div>
     <% end %>
   </div>
-  <div class="button-add">
-  <%= link_to "Sell your art", new_painting_path, class:"btn btn-primary" %>
-  </div>
+
 
 </div>
