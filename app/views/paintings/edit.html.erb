@@ -2,7 +2,8 @@
 <h1>Edit current painting</h1>
 <%= simple_form_for (@painting) do |f| %>
   <%= f.input :title %>
-  <%= f.input :measures %>
+  <%= f.input :width %>
+  <%= f.input :height %>
   <%= f.input :price %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "Update Painting", class:"btn btn-primary"%>
