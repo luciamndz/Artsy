@@ -1,5 +1,5 @@
 <div class="container mt-4 ">
-
+  <%= turbo_frame_tag "link" do %>
   <div class="card shadow" style="width: 30rem;">
 
     <%= cl_image_tag @painting.photo.key, height:"300px"%>
@@ -30,3 +30,4 @@
     <% end %>
   </div>
 </div>
+<% end %>

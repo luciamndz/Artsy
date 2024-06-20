@@ -1,7 +1,4 @@
 <%= render "banner" %>
-<div class="button-add sticky-top m-5 justify-content-right">
-  <%= link_to "Sell your art", new_painting_path, class:"btn btn-primary" %>
-  </div>
 <div class="carousel-container">
   <div style="width:75%;">
     <div id="carouselExampleSlidesOnly" class="carousel slide shadow-lg " data-ride="carousel" data-interval="3000" >
@@ -28,7 +25,9 @@
 </div>
 
 <div class="container justify-content-between p-0">
+<%= render "search" %>
   <div class="row">
+    <% if @paintings.any? %>
     <% @paintings.each do |painting| %>
       <div class="col-sm-6 col-md-4 col-lg-3 mb-4 ">
         <div class="card shadow-lg border border-light" id="index_card">
@@ -42,6 +41,9 @@
           </div>
         </div>
       </div>
+    <% end %>
+    <% else %>
+      <%= "No Paintings or artists by that name" %>
     <% end %>
   </div>
 </div>
