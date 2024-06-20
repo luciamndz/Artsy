@@ -1,0 +1,46 @@
+.carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  height: 70vh;
+  overflow: hidden;
+
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.carousel-item {
+  position: relative;
+}
+
+.carousel-item:before {
+  content: "";
+  background-image:
+    linear-gradient(
+      to bottom,
+      transparent, rgba(0,0,0,5)
+    );
+    display:block;
+    position: absolute;
+    top: 0;
+    width: 75vw;
+    height: 100vh;
+}
+
+.caption {
+  position: absolute;
+  top: 85%;
+  text-align: center;
+  width: 100%;
+}
+
+.caption p {
+  color: white;
+  font-size: 25px;
+  opacity: 0.7;
+}
