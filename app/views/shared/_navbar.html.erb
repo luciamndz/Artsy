@@ -3,7 +3,8 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <div class="d-flex align-items-center">
         <%= image_tag "https://arthive.com/res/media/img/oy1000/work/3ff/299075@2x.jpeg", class: "mr-2", alt: "Artsy Image" %>
-        <span class="navbar-brand-text">Arsty</span>
+        <span class="navbar-brand-text border-bottom border-black">Arsty</span>
+        <div class="m-2 border"></div>
       </div>
     <% end %>
 
@@ -16,9 +17,6 @@
         <% if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

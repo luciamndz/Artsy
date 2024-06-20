@@ -60,7 +60,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_20_005816) do
     t.datetime "updated_at", null: false
     t.integer "width"
     t.integer "height"
-    t.boolean "purchased"
+    t.boolean "purchased", default: false
     t.index ["user_id"], name: "index_paintings_on_user_id"
   end
 

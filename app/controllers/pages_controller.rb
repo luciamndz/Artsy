@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @paintings = Painting.all
+    @paintings = Painting.where(purchased: false)
   end
 
   def my_orders
