@@ -15,6 +15,8 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.price = @art.price
     if @order.save!
+      @art.purchased = true
+      @art.save
       redirect_to my_orders_path
     else
       render new:, status: :unprocessable_entity
