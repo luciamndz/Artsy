@@ -3,7 +3,7 @@
   <%= link_to "Sell your art", new_painting_path, class:"btn btn-primary" %>
   </div>
 <div class="carousel-container">
-  <div style="width:40%;">
+  <div style="width:75%;">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -20,23 +20,21 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row justify-content-center">
+<div class="container shadow justify-content-between p-0">
+  <div class="row">
     <% @paintings.each do |painting| %>
-      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card shadow-lg border border-light" style="width: 15rem;">
-          <%= cl_image_tag painting.photo.key %>
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-4 ">
+        <div class="card shadow-lg border border-light" >
+          <%= cl_image_tag painting.photo.key, class:"height: 50px"%>
           <p class="ml-3 "><%= link_to("more info", painting_path(painting))%></p>
           <div class="card-body">
             <h1 class="card-title"><%= painting.title %></h1>
-            <p class="card-text">Medidas: <%= painting.measures %></p>
-            <p class="card-text">Precio: $<%= painting.price %></p>
-            <p class="card-text">Usuario: <%= painting.user.user_name %></p>
+            <p class="card-text">Measures: <%= painting.measures %></p>
+            <p class="card-text">Price: $<%= painting.price %></p>
+            <p class="card-text">Artist: <%= painting.user.user_name %></p>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-
-
 </div>
