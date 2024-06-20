@@ -29,14 +29,12 @@
           <p class="ml-3 "><%= link_to("more info", painting_path(painting))%></p>
           <div class="card-body">
             <h1 class="card-title"><%= painting.title %></h1>
-            <p class="card-text">Medidas: <%= painting.measures %></p>
-            <p class="card-text">Precio: $<%= painting.price %></p>
-            <p class="card-text">Usuario: <%= painting.user.user_name %></p>
+            <p class="card-text">Measures: <%= "#{painting.width} x #{painting.height}" %></p>
+            <p class="card-text">Price: <%= number_to_currency(painting.price) %></p>
+            <p class="card-text"><em><%= painting.user.user_name %></em></p>
           </div>
         </div>
       </div>
     <% end %>
   </div>
-
-
 </div>
