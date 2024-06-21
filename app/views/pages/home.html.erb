@@ -31,7 +31,7 @@
     <% @paintings.each do |painting| %>
       <div class="col-sm-6 col-md-4 col-lg-3 mb-4 ">
         <div class="card shadow-lg border border-light" id="index_card">
-          <%= image_tag painting.photo.key, class:"height: 50px", id:"img-card"%>
+          <%= image_tag painting.photo, class:"height: 50px", id:"img-card"%>
           <p class="p-3 pb-1 link-offset-3 text-secondary"><%= link_to("more info", painting_path(painting))%></p>
           <div class="card-body">
             <h2 class="card-title"><%= painting.title %></h2>
