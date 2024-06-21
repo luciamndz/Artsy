@@ -4,7 +4,7 @@
     <% current_user.orders.each do |order| %>
       <div class="container w-75 m-5">
         <div class="card-product">
-          <%= cl_image_tag order.painting.photo.key, height: "200px" %>
+          <%= image_tag order.painting.photo.key, height: "200px" %>
           <div class="card-product-infos">
             <h2><%= order.painting.title %></h2>
             <p>Autor: <%= order.painting.user.user_name  %></p>
